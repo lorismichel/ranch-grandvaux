@@ -1,338 +1,407 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Colline de Grandvaux — « Le Ranch » | Vente directe</title>
-  <meta name="description" content="Propriété d'exception à Grandvaux (Lavaux, VD). Parcelle n° 5324 formant une colline privée, vue panoramique sur le lac Léman. Vente directe — contact propriétaire." />
+  <title>Colline de Grandvaux — « Le Ranch » | Vente Immobilière d'Exception</title>
+  <meta name="description" content="Propriété d'exception à Grandvaux (Lavaux, VD). Parcelle n° 5324 formant une colline privée avec vue panoramique à 180° sur le lac Léman. Vente directe par le propriétaire." />
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Colline de Grandvaux — Le Ranch | Propriété d'exception à vendre" />
-  <meta property="og:description" content="Parcelle n° 5324 formant une colline privée, vue panoramique sur le Léman, potentiel de valorisation selon LAT." />
+  <meta property="og:title" content="Colline de Grandvaux — Le Ranch | Domaine d'exception à vendre" />
+  <meta property="og:description" content="Sommet de colline privé au cœur du Lavaux (UNESCO). Vue imprenable, intimité absolue, potentiel unique." />
   <meta property="og:image" content="assets/cover.jpg" />
   <meta property="og:url" content="https://lorismichel.github.io/ranch-grandvaux/" />
-  <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- JSON-LD: RealEstateListing / Offer / Residence  -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "RealEstateListing",
-  "name": "Colline de Grandvaux — Le Ranch (Parcelle 5324)",
-  "url": "https://lorismichel.github.io/ranch-grandvaux/",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://lorismichel.github.io/ranch-grandvaux/"
-  },
-  "description": "Parcelle n° 5324 formant une colline sans vis-à-vis, vue panoramique sur le lac Léman, potentiel de valorisation sous réserve d’autorisations (LAT/commune).",
-  "image": [
-    "https://lorismichel.github.io/ranch-grandvaux/assets/cover.jpg",
-    "https://lorismichel.github.io/ranch-grandvaux/assets/gallery-1.jpg",
-    "https://lorismichel.github.io/ranch-grandvaux/assets/gallery-2.jpg"
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Chemin du Chaufour 7",
-    "addressLocality": "Grandvaux",
-    "postalCode": "1091",
-    "addressRegion": "Vaud",
-    "addressCountry": "CH"
-  },
-  "offers": {
-    "@type": "Offer",
-    "businessFunction": "https://purl.org/goodrelations/v1#Sell",
-    "priceCurrency": "CHF",
-    "availability": "https://schema.org/InStock",
-    "url": "https://lorismichel.github.io/ranch-grandvaux/#contact"
-  },
-  "seller": {
-    "@type": "Person",
-    "name": "Giuseppe Iosco",
-    "telephone": "+41 79 679 97 62",
-    "email": "giosco@bluewin.ch"
-  },
-  "itemOffered": {
-    "@type": "Residence",
-    "name": "Propriété avec affectation mixte (ancien restaurant « Le Ranch »)",
-    "floorSize": {
-      "@type": "QuantitativeValue",
-      "value": 287,
-      "unitCode": "MTK"
-    },
-    "additionalProperty": [
-      {
-        "@type": "PropertyValue",
-        "name": "Parcelle 5324 (surface totale)",
-        "value": 5366,
-        "unitCode": "MTK"
-      }
-    ]
-  }
-}
-</script>
+  <!-- Fonts: Luxury Pairing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS via CDN for rapid styling -->
+  <!-- Tailwind CSS & Plugins -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="icon" href="assets/favicon.png" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'luxury-gold': '#C5A059',
+            'luxury-charcoal': '#1A1A1A',
+            'luxury-cream': '#F9F7F2',
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'serif'],
+            sans: ['Montserrat', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Animate On Scroll -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
   <style>
-    :root{--maxw:80rem}
-    html{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
-    h1,h2,h3,h4,.serif{font-family:'Playfair Display',ui-serif,Georgia,serif}
-    .glass{backdrop-filter:blur(8px);background:rgba(255,255,255,0.6)}
-    .shadow-soft{box-shadow:0 10px 25px rgba(0,0,0,0.08)}
-    .section{scroll-margin-top:80px}
-    .badge{display:inline-block;border-radius:9999px;padding:0.25rem 0.75rem;font-size:0.75rem;font-weight:500;background:rgba(255,255,255,0.7)}
-    .stat{display:flex;flex-direction:column;align-items:center;gap:.25rem}
-    .stat b{font-family:'Playfair Display',ui-serif,serif;font-size:1.5rem}
-    .sticky-cta{position:fixed;left:0;right:0;bottom:16px;z-index:60;display:flex;justify-content:center}
+    .hero-gradient {
+      background: linear-gradient(to top, rgba(26, 26, 26, 0.8) 0%, rgba(26, 26, 26, 0) 50%);
+    }
+    .text-balance { text-wrap: balance; }
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .section-spacing { padding-top: 5rem; padding-bottom: 5rem; }
+    @media (min-width: 1024px) {
+      .section-spacing { padding-top: 8rem; padding-bottom: 8rem; }
+    }
   </style>
-  <!-- Luxury fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-50 text-gray-900">
-  <!-- Header / Navigation -->
-  <header class="fixed inset-x-0 top-0 z-50 bg-white/70 backdrop-blur border-b border-gray-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="#top" class="font-semibold tracking-tight">Colline de Grandvaux — « Le Ranch »</a>
-      <nav class="hidden md:flex gap-6 text-sm">
-        <a href="#atouts" class="hover:text-gray-700">Atouts</a>
-        <a href="#details" class="hover:text-gray-700">Détails</a>
-        <a href="#media" class="hover:text-gray-700">Photos & Vidéos</a>
-        <a href="#map" class="hover:text-gray-700">Localisation</a>
-        <a href="#contact" class="hover:text-gray-700">Contact</a>
-      </nav>
-      <a href="#contact" class="hidden md:inline-flex items-center gap-2 rounded-full bg-gray-900 text-white px-4 py-2 text-sm shadow-soft">Planifier une visite</a>
-    </div>
-  </header>
+<body class="bg-luxury-cream text-luxury-charcoal font-sans antialiased">
 
-  <!-- Hero -->
-  <section id="top" class="relative pt-24">
+  <!-- Navigation -->
+  <nav class="fixed inset-x-0 top-0 z-[100] border-b border-black/5 glass-nav transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#top" class="font-serif text-xl md:text-2xl tracking-widest uppercase font-medium">
+        Le Ranch <span class="hidden md:inline text-luxury-gold">| Grandvaux</span>
+      </a>
+      
+      <div class="hidden lg:flex items-center gap-10 text-[11px] uppercase tracking-[0.2em] font-semibold">
+        <a href="#vision" class="hover:text-luxury-gold transition-colors">La Vision</a>
+        <a href="#details" class="hover:text-luxury-gold transition-colors">Données</a>
+        <a href="#galerie" class="hover:text-luxury-gold transition-colors">Galerie</a>
+        <a href="#contact" class="hover:text-luxury-gold transition-colors text-luxury-gold">Prendre Contact</a>
+      </div>
+
+      <a href="tel:+41796799762" class="lg:hidden text-luxury-charcoal">
+        <i data-lucide="phone" class="w-5 h-5"></i>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="top" class="relative min-h-screen flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0 -z-10">
-      <picture>
-        <source srcset="assets/cover.webp" type="image/webp" />
-        <img src="assets/cover.jpg" alt="Vue panoramique sur le Léman depuis la colline de Grandvaux" class="w-full h-[70vh] object-cover" />
-      </picture>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+      <img src="assets/cover.jpg" alt="Vue sur le Léman" class="w-full h-full object-cover scale-105" id="heroImage" />
+      <div class="absolute inset-0 hero-gradient"></div>
     </div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[70vh] flex items-end pb-10">
-      <div class="text-white max-w-3xl">
-        <span class="badge">Lavaux • UNESCO</span> <span class="badge">Parcelle 5324 uniquement</span>
-        <h1 class="mt-3 text-4xl sm:text-6xl font-semibold leading-tight serif">Colline privée d'exception — Grandvaux (VD)</h1>
-        <p class="mt-4 text-white/90 max-w-2xl">Un promontoire unique dominant le Léman : intimité absolue, horizon ouvert jusqu'au Jura, lieu du restaurant historique le « Ranch ».</p>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a href="tel:+41796799762" class="rounded-full bg-white text-gray-900 px-5 py-2 text-sm font-medium">Appeler</a>
-          <a href="https://wa.me/41796799762?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20le%20Ranch%20%C3%A0%20Grandvaux" class="rounded-full bg-emerald-500 text-white px-5 py-2 text-sm font-medium">WhatsApp</a>
-          <!-- <a href="assets/Colline_Grandvaux.pdf" class="rounded-full bg-white/20 text-white px-5 py-2 text-sm font-medium border border-white/40">Télécharger la brochure</a> -->
-        </div>
+
+    <div class="max-w-5xl mx-auto px-6 text-center text-white" data-aos="fade-up" data-aos-duration="1500">
+      <div class="inline-flex items-center gap-3 mb-6">
+        <span class="h-[1px] w-8 bg-luxury-gold"></span>
+        <span class="text-[10px] md:text-[12px] uppercase tracking-[0.4em] font-medium text-luxury-gold">Lavaux UNESCO • Patrimoine Mondial</span>
+        <span class="h-[1px] w-8 bg-luxury-gold"></span>
+      </div>
+      <h1 class="font-serif text-5xl md:text-8xl leading-[1.1] mb-8 text-balance">L'Unique Colline Privée de Grandvaux</h1>
+      <p class="text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto mb-10 opacity-90 leading-relaxed">
+        Une enclave de sérénité dominant l'arc lémanique. 5'366 m² de prestige et d'histoire au sommet du Lavaux.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#contact" class="w-full sm:w-auto px-10 py-4 bg-white text-luxury-charcoal text-[12px] uppercase tracking-[0.2em] font-bold hover:bg-luxury-gold hover:text-white transition-all duration-500">
+          Demander le dossier
+        </a>
+        <a href="#galerie" class="w-full sm:w-auto px-10 py-4 border border-white/30 bg-white/5 backdrop-blur-sm text-white text-[12px] uppercase tracking-[0.2em] font-bold hover:bg-white/10 transition-all duration-500">
+          Découvrir le lieu
+        </a>
       </div>
     </div>
-    <!-- Key facts strip -->
-    <div class="bg-white/80 backdrop-blur border-y border-gray-200">
-      <div class="mx-auto" style="max-width:var(--maxw);">
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 px-4 sm:px-6 lg:px-8 py-6">
-          <div class="stat"><span class="text-xs uppercase tracking-wide text-gray-500">Parcelle</span><b>n° 5324</b></div>
-          <div class="stat"><span class="text-xs uppercase tracking-wide text-gray-500">Surface</span><b>5’366 m²</b></div>
-          <div class="stat"><span class="text-xs uppercase tracking-wide text-gray-500">Habitable existant</span><b>≈ 287 m²</b></div>
-          <div class="stat"><span class="text-xs uppercase tracking-wide text-gray-500">E‑GRID</span><b>CH 77459 19683 88</b></div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
+      <i data-lucide="chevron-down" class="text-white w-6 h-6"></i>
+    </div>
+  </section>
+
+  <!-- Key Statistics -->
+  <section class="bg-luxury-charcoal py-12 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+        <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-luxury-gold text-2xl md:text-3xl font-serif mb-1">5'366 m²</div>
+          <div class="text-[10px] uppercase tracking-[0.2em] text-white/50 font-semibold">Surface Totale</div>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-luxury-gold text-2xl md:text-3xl font-serif mb-1">180°</div>
+          <div class="text-[10px] uppercase tracking-[0.2em] text-white/50 font-semibold">Vue Panoramique</div>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+          <div class="text-luxury-gold text-2xl md:text-3xl font-serif mb-1">287 m²</div>
+          <div class="text-[10px] uppercase tracking-[0.2em] text-white/50 font-semibold">Habitable Existant</div>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+          <div class="text-luxury-gold text-2xl md:text-3xl font-serif mb-1">Zéro</div>
+          <div class="text-[10px] uppercase tracking-[0.2em] text-white/50 font-semibold">Vis-à-vis</div>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- Atouts -->
-  <section id="atouts" class="section py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="p-8 rounded-2xl bg-white shadow-soft">
-          <div class="text-xl font-semibold serif">Vue & lumière</div>
-          <p class="mt-2 text-gray-600">Panorama 180° sur le Léman jusqu'au Jura, orientation idéale du lever au coucher du soleil.</p>
-        </div>
-        <div class="p-8 rounded-2xl bg-white shadow-soft">
-          <div class="text-xl font-semibold serif">Intimité absolue</div>
-          <p class="mt-2 text-gray-600">Sommet de colline sans vis‑à‑vis, accès discret, environnement viticole classé UNESCO.</p>
-        </div>
-        <div class="p-8 rounded-2xl bg-white shadow-soft">
-          <div class="text-xl font-semibold serif">Signature & potentiel</div>
-          <p class="mt-2 text-gray-600">Ancien restaurant le « Ranch » culte, affectation mixte existante (≈ 287 m²). Perspectives de valorisation sous réserve d’autorisations (LAT/commune).</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Détails des parcelles -->
-  <section id="details" class="section py-4">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-3 gap-8 items-start">
-        <div class="lg:col-span-2 p-6 rounded-2xl bg-white shadow-soft">
-          <h2 class="text-2xl font-semibold serif">Données clés</h2>
-          <div class="mt-6 grid sm:grid-cols-2 gap-6">
-            <div>
-              <h3 class="font-medium">Immeuble 5324</h3>
-              <ul class="mt-2 text-sm text-gray-700 space-y-1">
-                <li><strong>Adresse</strong> : Chemin du Chaufour 7, 1091 Grandvaux (VD)</li>
-                <li><strong>E-GRID</strong> : CH 77459 19683 88</li>
-                <li><strong>Surface parcelle</strong> : 5’366 m²</li>
-                <li><strong>Affectation mixte</strong>, surface habitable env. 287 m²</li>
-                <li>Ancien restaurant « Le Ranch », lieu culte historique</li>
-              </ul>
-            </div></div>
-          <div class="mt-6 text-sm text-gray-600">Prix : sur demande • bien rare sur l’arc lémanique.</div>
-        </div>
-        <!-- <aside class="p-6 rounded-2xl bg-white shadow-soft">
-          <h3 class="text-lg font-semibold">Documents</h3>
-          <ul class="mt-3 text-sm space-y-2">
-            <li><a class="text-indigo-600 hover:underline" href="assets/Colline_Grandvaux.pdf" download>Brochure PDF</a></li>
-            <li><a class="text-indigo-600 hover:underline" href="#">Plans (PDF) — à ajouter</a></li>
-            <li><a class="text-indigo-600 hover:underline" href="#">Extrait registre foncier — à ajouter</a></li>
-            <li><a class="text-indigo-600 hover:underline" href="#">CECB — à ajouter</a></li>
+  <!-- Vision / Features -->
+  <section id="vision" class="section-spacing">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div data-aos="fade-right">
+          <h2 class="text-[12px] uppercase tracking-[0.3em] text-luxury-gold font-bold mb-4 italic">Le Patrimoine</h2>
+          <h3 class="font-serif text-4xl md:text-6xl leading-tight mb-8">Un emplacement mythique chargé d'histoire.</h3>
+          <p class="text-luxury-charcoal/70 leading-relaxed mb-6 text-lg">
+            Ancien lieu culte des promeneurs et des épicuriens, le restaurant « Le Ranch » cède la place à un projet de vie hors du commun. Dominant les vignes en terrasses du Lavaux, cette parcelle est l'une des rares du secteur à offrir une telle emprise foncière sur un promontoire naturel.
+          </p>
+          <ul class="space-y-4 mb-10">
+            <li class="flex items-start gap-4">
+              <i data-lucide="check" class="w-5 h-5 text-luxury-gold mt-1"></i>
+              <span class="font-medium">Intimité absolue au sommet d'une colline privée.</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <i data-lucide="check" class="w-5 h-5 text-luxury-gold mt-1"></i>
+              <span class="font-medium">Orientation Sud-Ouest : Lumière optimale toute la journée.</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <i data-lucide="check" class="w-5 h-5 text-luxury-gold mt-1"></i>
+              <span class="font-medium">Environnement viticole protégé par l'UNESCO.</span>
+            </li>
           </ul>
-          <p class="mt-4 text-xs text-gray-500">Les informations ci-dessus proviennent du propriétaire et sont fournies à titre indicatif, sous réserve de vérifications officielles.</p>
-        </aside> -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Media: Galerie & Vidéo/Matterport -->
-  <section id="media" class="section py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl font-semibold serif">Photos & Vidéos</h2>
-      <div class="mt-6 grid md:grid-cols-3 gap-4">
-        <img class="rounded-xl shadow-soft" src="assets/gallery-1.jpg" alt="Colline et dépendances" loading="lazy">
-        <img class="rounded-xl shadow-soft" src="assets/gallery-2.jpg" alt="Vue lac Léman" loading="lazy">
-        <img class="rounded-xl shadow-soft" src="assets/cover.jpg" alt="Bâtiment principal" loading="lazy">
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience: Brochure & Data Room 
-  <section class="section py-10 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-6 items-center">
-      <div class="p-6 rounded-2xl bg-gray-50 border border-gray-200">
-        <h3 class="text-lg font-semibold serif">Brochure & plans</h3>
-        <p class="mt-2 text-sm text-gray-600">Téléchargez la brochure détaillée et, sur demande, accédez au dossier technique (plans, CECB, extrait RF).</p>
-        <div class="mt-4 flex flex-wrap gap-3">
-          <a href="assets/Colline_Grandvaux.pdf" class="rounded-xl bg-gray-900 text-white px-5 py-3 font-medium">Télécharger la brochure</a>
-          <a href="#contact" class="rounded-xl bg-white text-gray-900 border px-5 py-3 font-medium">Demander le dossier</a>
         </div>
-      </div>
-      <div class="p-6 rounded-2xl bg-gray-50 border border-gray-200">
-        <h3 class="text-lg font-semibold serif">Visite privée</h3>
-        <p class="mt-2 text-sm text-gray-600">Visites sur qualification. Possibilité de présentation vidéo et de rendez‑vous en visio pour acheteurs internationaux.</p>
-        <div class="mt-4 flex flex-wrap gap-3">
-          <a href="#contact" class="rounded-xl bg-emerald-500 text-white px-5 py-3 font-medium">Planifier une visite</a>
-          <a href="#media" class="rounded-xl bg-white text-gray-900 border px-5 py-3 font-medium">Voir la galerie</a>
+        <div class="relative" data-aos="fade-left">
+          <img src="assets/gallery-1.jpg" alt="Le domaine" class="w-full aspect-[4/5] object-cover rounded-sm shadow-2xl" />
+          <div class="absolute -bottom-10 -left-10 hidden md:block w-64 h-64 bg-luxury-charcoal p-8 rounded-sm shadow-xl">
+            <i data-lucide="quote" class="text-luxury-gold w-10 h-10 mb-4 opacity-50"></i>
+            <p class="text-white/80 font-serif italic text-lg leading-relaxed">
+              "Un horizon sans limite, du Jet d'eau de Genève aux cimes des Alpes."
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
-    -->
 
-  <!-- Map -->
-  <section id="map" class="section py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl font-semibold serif">Localisation</h2>
-      <p class="mt-2 text-gray-600 text-sm">Chemin du Chaufour 7, 1091 Grandvaux — Lavaux (VD)</p>
-      <div class="mt-4 aspect-video rounded-xl overflow-hidden shadow-soft">
-        <!-- Remplacez les coordonnées ci-dessous par celles du bien. Obtenez un iframe depuis openstreetmap.org → Partager → HTML. -->
-        <iframe id="osm" class="w-full h-full" src="https://www.openstreetmap.org/export/embed.html?bbox=6.677885055541993%2C46.48500815504562%2C6.763715744018555%2C46.53896760653612&amp;layer=mapnik&amp;marker=46.51199457739286%2C6.720800399780273" style="border:0"></iframe>
+  <!-- Data Room Summary -->
+  <section id="details" class="bg-white section-spacing border-y border-black/5">
+    <div class="max-w-4xl mx-auto px-6 text-center mb-16" data-aos="fade-up">
+      <h2 class="text-4xl md:text-5xl font-serif mb-6">Fiche Technique</h2>
+      <p class="text-luxury-charcoal/60 max-w-xl mx-auto">Toutes les informations essentielles concernant la parcelle n° 5324 de la commune de Grandvaux.</p>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+      <div class="flex flex-col gap-4 border-l border-luxury-gold/30 pl-8 py-4" data-aos="fade-up" data-aos-delay="100">
+        <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-luxury-gold">Localisation</span>
+        <h4 class="text-xl font-serif italic">Chemin du Chaufour 7</h4>
+        <p class="text-sm leading-relaxed text-luxury-charcoal/60">Grandvaux, l'une des communes les plus prisées du canton de Vaud, au cœur de la Riviera suisse.</p>
+      </div>
+      <div class="flex flex-col gap-4 border-l border-luxury-gold/30 pl-8 py-4" data-aos="fade-up" data-aos-delay="200">
+        <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-luxury-gold">Identification</span>
+        <h4 class="text-xl font-serif italic">E-GRID CH 77459 19683 88</h4>
+        <p class="text-sm leading-relaxed text-luxury-charcoal/60">Parcelle foncière inscrite au registre foncier du district de Lavaux-Oron. Affectation mixte.</p>
+      </div>
+      <div class="flex flex-col gap-4 border-l border-luxury-gold/30 pl-8 py-4" data-aos="fade-up" data-aos-delay="300">
+        <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-luxury-gold">Valeur</span>
+        <h4 class="text-xl font-serif italic">Prix sur demande</h4>
+        <p class="text-sm leading-relaxed text-luxury-charcoal/60">Vente directe par le propriétaire. Accès au dossier complet après qualification de l'acquéreur.</p>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="section py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10">
-      <div class="p-6 rounded-2xl bg-white shadow-soft">
-        <h2 class="text-2xl font-semibold serif">Intéressé·e ? Parlons‑en.</h2>
-        <p class="mt-2 text-gray-600 text-sm">Merci de préciser votre budget, votre projet (résidence principale/secondaire, exploitation) et vos disponibilités pour une visite.</p>
-        <!-- Formspree: remplacez l'action par votre endpoint, p.ex. https://formspree.io/f/abcdwxyz -->
-        <form class="mt-6 space-y-4" action="https://formspree.io/f/xjkeolaj" method="POST">
-          <div class="grid sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-sm font-medium">Prénom & Nom</label>
-              <input name="name" required class="mt-1 w-full rounded-xl border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-gray-900" placeholder="Votre nom" />
-            </div>
-            <div>
-              <label class="block text-sm font-medium">E‑mail</label>
-              <input name="email" type="email" required class="mt-1 w-full rounded-xl border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-gray-900" placeholder="vous@example.com" />
-            </div>
-            <div>
-              <label class="block text-sm font-medium">Téléphone</label>
-              <input name="phone" class="mt-1 w-full rounded-xl border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-gray-900" placeholder="+41 …" />
-            </div>
-            <div>
-              <label class="block text-sm font-medium">Budget indicatif (CHF)</label>
-              <input name="budget" class="mt-1 w-full rounded-xl border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-gray-900" placeholder=":" />
-            </div>
-          </div>
-          <div>
-            <label class="block text-sm font-medium">Message</label>
-            <textarea name="message" rows="4" required class="mt-1 w-full rounded-xl border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-gray-900" placeholder="Votre projet, disponibilités, questions…"></textarea>
-          </div>
-          <div class="text-xs text-gray-600 flex items-start gap-2">
-            <input type="checkbox" required class="mt-1" />
-            <span>J’accepte d’être contacté·e et, si nécessaire, de signer un engagement de confidentialité (NDA) pour l’accès au dossier complet.</span>
-          </div>
-          <input type="hidden" name="_subject" value="Demande d'information — Ranch Grandvaux" />
-          <button class="rounded-xl bg-gray-900 text-white px-5 py-3 font-medium">Envoyer la demande</button>
-          <p class="text-xs text-gray-500">Les données transmises servent exclusivement à la prise de contact pour ce bien.</p>
-        </form>
+  <!-- Galerie -->
+  <section id="galerie" class="section-spacing bg-luxury-cream">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <h2 class="text-4xl md:text-6xl font-serif" data-aos="fade-right">Instantanés du Lieu</h2>
+        </div>
+        <div class="flex gap-4" data-aos="fade-left">
+           <p class="text-luxury-charcoal/50 text-sm max-w-xs">La colline offre des points de vue changeants au gré des saisons sur le Bassin Lémanique.</p>
+        </div>
       </div>
-      <div class="p-6 rounded-2xl bg-white shadow-soft">
-        <h3 class="text-lg font-semibold">Contact direct</h3>
-        <ul class="mt-3 text-sm space-y-2">
-          <li><strong>Propriétaire :</strong> Giuseppe Iosco</li>
-          <li><strong>Tél.</strong> : <a class="text-indigo-600 hover:underline" href="tel:+41796799762">+41 79 679 97 62</a></li>
-          <li><strong>E‑mail</strong> : <a class="text-indigo-600 hover:underline" href="mailto:giosco@bluewin.ch?subject=Ranch%20Grandvaux">giosco@bluewin.ch</a></li>
-          <li><strong>WhatsApp :</strong> <a class="text-emerald-600 hover:underline" href="https://wa.me/41796799762?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20le%20Ranch%20%C3%A0%20Grandvaux">Démarrer la conversation</a></li>
-        </ul>
-        <div class="mt-8">
-          <h4 class="font-medium">Pourquoi ce bien est unique ?</h4>
-          <ul class="mt-2 text-sm text-gray-700 list-disc pl-5 space-y-2">
-            <li>Colline privative sans vis-à-vis, qui domine le paysage du Lavaux.</li>
-            <li>Histoire locale : ancien restaurant « Le Ranch », lieu culte des promeneurs.</li>
-            <li>Potentiel exceptionnel (sous réserve des autorisations communales et LAT).</li>
-          </ul>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+        <div class="md:col-span-8 overflow-hidden rounded-sm" data-aos="zoom-in">
+          <img src="assets/cover.jpg" class="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-700 cursor-pointer" alt="Cover" />
+        </div>
+        <div class="md:col-span-4 overflow-hidden rounded-sm" data-aos="zoom-in" data-aos-delay="200">
+          <img src="assets/gallery-1.jpg" class="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-700 cursor-pointer" alt="Gallery 1" />
+        </div>
+        <div class="md:col-span-4 overflow-hidden rounded-sm" data-aos="zoom-in" data-aos-delay="100">
+          <img src="assets/gallery-2.jpg" class="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-700 cursor-pointer" alt="Gallery 2" />
+        </div>
+        <div class="md:col-span-8 bg-luxury-charcoal p-12 flex items-center justify-center text-center rounded-sm" data-aos="zoom-in" data-aos-delay="300">
+           <div class="max-w-md">
+             <i data-lucide="eye" class="text-luxury-gold w-12 h-12 mx-auto mb-6 opacity-30"></i>
+             <h4 class="font-serif text-3xl text-white mb-4 italic">Découvrez-le par vous-même</h4>
+             <p class="text-white/60 mb-8">Les visites privées sont organisées sur rendez-vous après un premier échange téléphonique.</p>
+             <a href="#contact" class="inline-block px-8 py-3 border border-luxury-gold text-luxury-gold uppercase tracking-[0.2em] text-[11px] font-bold hover:bg-luxury-gold hover:text-white transition-all">Organiser une visite</a>
+           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location / Map -->
+  <section class="relative h-[600px] bg-luxury-charcoal">
+    <iframe id="osm" class="w-full h-full grayscale opacity-60 contrast-125" src="https://www.openstreetmap.org/export/embed.html?bbox=6.677885055541993%2C46.48500815504562%2C6.763715744018555%2C46.53896760653612&amp;layer=mapnik&amp;marker=46.51199457739286%2C6.720800399780273" style="border:0"></iframe>
+    <div class="absolute inset-0 pointer-events-none flex items-center justify-center">
+       <div class="bg-luxury-charcoal/90 backdrop-blur-md p-8 md:p-12 text-white border border-white/10 max-w-sm pointer-events-auto" data-aos="fade-up">
+         <h4 class="font-serif text-2xl mb-4 italic">Accessibilité</h4>
+         <ul class="text-sm text-white/70 space-y-3 mb-8">
+           <li class="flex items-center gap-3">
+             <i data-lucide="map-pin" class="w-4 h-4 text-luxury-gold"></i>
+             15 min de Lausanne Centre
+           </li>
+           <li class="flex items-center gap-3">
+             <i data-lucide="map-pin" class="w-4 h-4 text-luxury-gold"></i>
+             45 min de Genève Aéroport
+           </li>
+           <li class="flex items-center gap-3">
+             <i data-lucide="map-pin" class="w-4 h-4 text-luxury-gold"></i>
+             5 min des accès autoroutiers
+           </li>
+         </ul>
+         <a href="https://maps.google.com/?q=Chemin+du+Chaufour+7,1091+Grandvaux" target="_blank" class="text-luxury-gold text-[10px] uppercase tracking-[0.2em] font-bold border-b border-luxury-gold pb-1 hover:text-white hover:border-white transition-all">Ouvrir dans Google Maps</a>
+       </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section-spacing bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-12 gap-16">
+        <div class="lg:col-span-5" data-aos="fade-right">
+          <h2 class="text-[12px] uppercase tracking-[0.3em] text-luxury-gold font-bold mb-4 italic">Contact Privé</h2>
+          <h3 class="font-serif text-4xl md:text-5xl leading-tight mb-8 text-balance">Manifestez votre intérêt.</h3>
+          <p class="text-luxury-charcoal/70 mb-10 leading-relaxed">
+            Pour obtenir le dossier technique complet (extraits du registre foncier, plans, potentiel de valorisation) ou pour organiser une visite du domaine, merci de renseigner vos coordonnées.
+          </p>
+          
+          <div class="space-y-8">
+            <div class="flex items-center gap-6 group">
+              <div class="w-12 h-12 rounded-full bg-luxury-cream flex items-center justify-center group-hover:bg-luxury-gold transition-colors duration-500">
+                <i data-lucide="user" class="w-5 h-5 text-luxury-charcoal group-hover:text-white transition-colors duration-500"></i>
+              </div>
+              <div>
+                <div class="text-[10px] uppercase tracking-widest text-luxury-charcoal/40 font-bold mb-1">Propriétaire</div>
+                <div class="font-serif italic text-xl">Giuseppe Iosco</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-6 group">
+              <a href="tel:+41796799762" class="w-12 h-12 rounded-full bg-luxury-cream flex items-center justify-center group-hover:bg-luxury-gold transition-colors duration-500">
+                <i data-lucide="phone" class="w-5 h-5 text-luxury-charcoal group-hover:text-white transition-colors duration-500"></i>
+              </a>
+              <div>
+                <div class="text-[10px] uppercase tracking-widest text-luxury-charcoal/40 font-bold mb-1">Téléphone</div>
+                <a href="tel:+41796799762" class="font-serif italic text-xl hover:text-luxury-gold transition-colors">+41 79 679 97 62</a>
+              </div>
+            </div>
+            <div class="flex items-center gap-6 group">
+              <a href="mailto:giosco@bluewin.ch" class="w-12 h-12 rounded-full bg-luxury-cream flex items-center justify-center group-hover:bg-luxury-gold transition-colors duration-500">
+                <i data-lucide="mail" class="w-5 h-5 text-luxury-charcoal group-hover:text-white transition-colors duration-500"></i>
+              </a>
+              <div>
+                <div class="text-[10px] uppercase tracking-widest text-luxury-charcoal/40 font-bold mb-1">E-mail</div>
+                <a href="mailto:giosco@bluewin.ch" class="font-serif italic text-xl hover:text-luxury-gold transition-colors">giosco@bluewin.ch</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7" data-aos="fade-left">
+          <div class="bg-luxury-cream p-8 md:p-12 rounded-sm border border-black/5">
+            <form action="https://formspree.io/f/xjkeolaj" method="POST" class="space-y-6">
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label class="text-[10px] uppercase tracking-widest font-bold text-luxury-charcoal/60">Nom Complet</label>
+                  <input type="text" name="name" required class="w-full bg-white border-b border-black/10 px-0 py-3 focus:outline-none focus:border-luxury-gold transition-colors text-sm" placeholder="M. Jean Dupont" />
+                </div>
+                <div class="space-y-2">
+                  <label class="text-[10px] uppercase tracking-widest font-bold text-luxury-charcoal/60">Adresse E-mail</label>
+                  <input type="email" name="email" required class="w-full bg-white border-b border-black/10 px-0 py-3 focus:outline-none focus:border-luxury-gold transition-colors text-sm" placeholder="jean.dupont@finance.ch" />
+                </div>
+              </div>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label class="text-[10px] uppercase tracking-widest font-bold text-luxury-charcoal/60">Téléphone</label>
+                  <input type="tel" name="phone" class="w-full bg-white border-b border-black/10 px-0 py-3 focus:outline-none focus:border-luxury-gold transition-colors text-sm" placeholder="+41 ..." />
+                </div>
+                <div class="space-y-2">
+                  <label class="text-[10px] uppercase tracking-widest font-bold text-luxury-charcoal/60">Budget Indicatif</label>
+                  <input type="text" name="budget" class="w-full bg-white border-b border-black/10 px-0 py-3 focus:outline-none focus:border-luxury-gold transition-colors text-sm" placeholder="En CHF" />
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label class="text-[10px] uppercase tracking-widest font-bold text-luxury-charcoal/60">Message / Projet</label>
+                <textarea name="message" rows="4" required class="w-full bg-white border-b border-black/10 px-0 py-3 focus:outline-none focus:border-luxury-gold transition-colors text-sm resize-none" placeholder="Décrivez votre projet (résidence, investissement...)"></textarea>
+              </div>
+              
+              <div class="pt-4">
+                <button type="submit" class="w-full bg-luxury-charcoal text-white py-5 text-[11px] uppercase tracking-[0.3em] font-bold hover:bg-luxury-gold transition-all duration-500 shadow-xl">
+                  Soumettre la Demande
+                </button>
+              </div>
+              <p class="text-[9px] text-center text-luxury-charcoal/40 uppercase tracking-widest leading-relaxed">
+                Confidentialité garantie. Vos données ne sont transmises qu'au propriétaire.
+              </p>
+            </form>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="border-t border-gray-200 py-10 text-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="text-gray-500">© <span id="year"></span> Colline de Grandvaux — « Le Ranch ». Tous droits réservés.</p>
-      <div class="text-gray-500">Vente directe • Prix sur demande • Lavaux (VD)</div>
+  <footer class="bg-luxury-charcoal py-20 text-white/40">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-10">
+        <div class="font-serif text-2xl tracking-widest uppercase text-white">
+          Le Ranch <span class="text-luxury-gold">| Grandvaux</span>
+        </div>
+        <div class="flex gap-8 text-[10px] uppercase tracking-[0.2em] font-bold">
+          <a href="#vision" class="hover:text-white transition-colors">La Vision</a>
+          <a href="#details" class="hover:text-white transition-colors">Données</a>
+          <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+        </div>
+      </div>
+      <div class="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between gap-4 text-[10px] uppercase tracking-widest">
+        <div>© <span id="year"></span> — Propriété Exceptionnelle Lavaux. Tous droits réservés.</div>
+        <div>Vente Directe • Chemin du Chaufour 7 • 1091 Grandvaux</div>
+      </div>
     </div>
   </footer>
 
-  <script>
-    // Set current year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-  <!-- Sticky inquiry bar -->
-  <div class="sticky-cta">
-    <div class="rounded-full shadow-soft bg-white border border-gray-200 px-3 py-2 flex items-center gap-2">
-      <span class="hidden sm:inline text-sm">Intéressé·e par la parcelle 5324 ?</span>
-      <a href="#contact" class="rounded-full bg-gray-900 text-white px-4 py-2 text-sm">Demander une visite</a>
-      <button id="shareBtn" class="rounded-full bg-white text-gray-900 border px-4 py-2 text-sm">Partager</button>
-    </div>
+  <!-- Sticky Mobile CTA -->
+  <div class="fixed bottom-6 inset-x-6 z-50 lg:hidden" id="mobileCta">
+    <a href="#contact" class="flex items-center justify-center gap-3 w-full bg-luxury-gold text-white py-4 rounded-sm shadow-2xl font-bold text-[11px] uppercase tracking-widest">
+      <i data-lucide="calendar" class="w-4 h-4"></i>
+      Demander une visite
+    </a>
   </div>
 
   <script>
-    // Set current year in footer
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Initialize AOS
+    AOS.init({
+      offset: 100,
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+    });
+
+    // Set Current Year
     document.getElementById('year').textContent = new Date().getFullYear();
-    // Share API fallback
-    const shareBtn = document.getElementById('shareBtn');
-    if(shareBtn){
-      shareBtn.addEventListener('click', async () => {
-        const data = { title: document.title, text: 'Parcelle 5324 — Colline de Grandvaux', url: window.location.href };
-        if(navigator.share){ try{ await navigator.share(data);}catch(e){} }
-        else{ navigator.clipboard.writeText(window.location.href); shareBtn.textContent='Lien copié'; setTimeout(()=>shareBtn.textContent='Partager',1500); }
-      });
-    }
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        nav.classList.add('py-4', 'shadow-xl');
+        nav.classList.remove('h-20');
+      } else {
+        nav.classList.remove('py-4', 'shadow-xl');
+        nav.classList.add('h-20');
+      }
+    });
   </script>
 </body>
 </html>
